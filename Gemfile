@@ -10,6 +10,8 @@ gem 'devise'
 gem 'semantic-ui-sass'
 gem 'jquery-rails'
 gem 'devise-semantified'
+gem "stock_quote", '~> 3.0.0'
+gem 'iex-ruby-client'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
