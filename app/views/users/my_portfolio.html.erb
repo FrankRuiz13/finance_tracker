@@ -1,0 +1,26 @@
+<h1 style="font-family: Cuprum">My Portfolio</h1>
+
+
+<div class="ui container">
+<h3>Search for Stocks</h3>
+  <div class="stock-lookup">
+    <%= form_tag "#", method: :get, id: "stock-lookup-form" do %>
+      <div class="ui form">
+        <div class="ten wide column">
+          <%= text_field_tag :stock, params[:stock], 
+                                placeholder: "Stock ticker symbol", autofocus: true,
+                                class: "eight wide field" %>
+        </div><br>
+            <div class="two wide column">
+              <%= button_tag(type: :submit, class: "ui black button") do %>
+              <i class="search icon"></i> Look up a stock
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+  
+

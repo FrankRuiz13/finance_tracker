@@ -1,7 +1,29 @@
 @import "semantic-ui";
 
+* {
+  font-family: 'Cuprum', sans-serif;
+}
+
+#navbar {
+  background: darkgreen;
+  box-shadow: 2px 2px 7px rgba( 0, 0, 0, 0.5);
+  font-size: 1.3em;
+}
+
 .menu {
-  color: black;
+  background: rgba( 0, 0, 0, 0.5);
+}
+
+h1 {
+  font-family: inherit;
+  font-size: 4rem;
+  letter-spacing: -1px;
+  text-align: center;
+  font-style: italic;
+}
+
+h3 {
+  font-family: inherit;
 }
 
 .field_with_errors {
