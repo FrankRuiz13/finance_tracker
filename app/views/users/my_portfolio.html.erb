@@ -9,21 +9,21 @@
         <div class="ten wide column">
           <%= text_field_tag :stock, params[:stock], 
                                 placeholder: "Stock ticker symbol", autofocus: true,
-                                class: "eight wide field" %>
+                                class: "seven wide field" %>
         </div><br>
-            <div class="two wide column">
-              <%= button_tag(type: :submit, class: "ui black button") do %>
+            <div class="four wide column">
+              <%= button_tag(type: :submit, class: "ui black button", id: "search-button") do %>
               <i class="search icon"></i> Look up a stock
             <% end %>
           </div>
         </div>
       </div>
     <% end %>
-    <div class="well results-block">
-  <strong>Symbol: </strong> <%= @stock.ticker %>
-  <strong>Name: </strong> <%= @stock.name %>
-  <strong>Price: </strong> <%= @stock.last_price %>
-</div>
+    <div class="ui tag label" id="results-tag">
+      <strong>Symbol: </strong> <%= @stock.ticker %> 
+      <strong>Name: </strong> <%= @stock.name %> 
+      <strong>Price: </strong> <%= @stock.last_price %>
+    </div>
   </div>
 
 
