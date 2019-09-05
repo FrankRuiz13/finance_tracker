@@ -4,7 +4,7 @@
 <div class="ui container">
 <h3>Search for Stocks</h3>
   <div class="stock-lookup">
-    <%= form_tag "#", method: :get, id: "stock-lookup-form" do %>
+    <%= form_tag search_stocks_path, method: :get, id: "stock-lookup-form" do %>
       <div class="ui form">
         <div class="ten wide column">
           <%= text_field_tag :stock, params[:stock], 
@@ -19,8 +19,14 @@
         </div>
       </div>
     <% end %>
-  </div>
+    <div class="well results-block">
+  <strong>Symbol: </strong> <%= @stock.ticker %>
+  <strong>Name: </strong> <%= @stock.name %>
+  <strong>Price: </strong> <%= @stock.last_price %>
 </div>
+  </div>
+
+
 
   
 
