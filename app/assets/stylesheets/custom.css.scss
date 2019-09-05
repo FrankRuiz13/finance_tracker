@@ -4,10 +4,19 @@
   font-family: 'Cuprum', sans-serif;
 }
 
+
 #navbar {
   background: darkgreen;
   box-shadow: 2px 2px 7px rgba( 0, 0, 0, 0.5);
   font-size: 1.3em;
+}
+
+#logo {
+  color: black;
+  font-weight: bolder;
+  font-style: oblique;
+  text-transform: uppercase;
+  letter-spacing: -1px;
 }
 
 .menu {
