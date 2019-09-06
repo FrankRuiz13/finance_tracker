@@ -1,28 +1,28 @@
 <div class="ui container">
-<table class="ui celled striped table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Symbol</th>
-      <th>Price</th>
-      <% if @user.id == current_user.id  %>
-        <th>Actions</th>
-      <% end %>
-    </tr>
-  </thead>
-  <tbody>
-    <% @user_stocks.each do |user_stock| %>
+  <table class="ui celled striped table">
+    <thead>
       <tr>
-        <td><%= user_stock.name %></td>
-        <td><%= user_stock.ticker %></td>
-        <td><%= user_stock.last_price %></td>
-        <% if @user.id == current_user.id %>
+        <th>Name</th>
+        <th>Symbol</th>
+        <th>Price</th>
+        <% if @user.id == current_user.id  %>
+        <th>Actions</th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user_stocks.each do |user_stock| %>
+        <tr>
+          <td><%= user_stock.name %></td>
+          <td><%= user_stock.ticker %></td>
+          <td><%= user_stock.last_price %></td>
+          <% if @user.id == current_user.id %>
           <td><%= link_to "Delete this stock", user_stock_path(user_stock), method: :delete,
                           data: {confirm: "Are you sure?"}, class: "ui red button" %>
           </td>
           <% end %>
-                </tr>
+        </tr>
         <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
 </div>
