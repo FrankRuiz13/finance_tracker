@@ -1,1 +1,36 @@
-<h1>My Friends</h1>
+<%= render 'friends/lookup' %>
+<% if @friendships.size > 0 %>
+    <div class="ui container">
+  <table class="ui celled striped table">
+    <thead>
+      <tr>
+        <th>
+          <h2>My Friends</h2>
+        </th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @friendships.each do |friend| %>
+        <tr>
+          <td><%= friend.full_name %></td>
+          <td><%= friend.email %></td>
+          <td>
+          <%= link_to "View Profile", user_path(friend), class: "ui black button" %>
+          <%= link_to "Remove Friend", friendship_path(friend), method: :delete,
+                          data: {confirm: "Are you sure?"}, class: "ui red button" %>
+          </td>
+        </tr>
+        <% end %>
+    </tbody>
+  </table>
+</div>
+
+<% else %>
+
+<div class="row">
+  <h2>You dont have any friends yet. Please add some!</h2>
+</div>
+<% end %>

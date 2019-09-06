@@ -1,0 +1,23 @@
+<h1 class="ui center aligned icon header">
+  <i class="circular  yellow users  icon"></i>
+</h1>
+<br>
+<div class="ui container">
+<h3>Search for friends</h3>
+  <div class="friend-lookup">
+    <%= form_tag search_friends_path, remote: true, method: :get, id: "friend-lookup-form" do %>
+      <div class="ui form">
+        <div class="ten wide column">
+          <%= text_field_tag :search_param, params[:search_param], 
+                                placeholder: "Enter name or email", autofocus: true,
+                                class: "seven wide field" %>
+        </div><br>
+          <div class="four wide column">
+            <%= button_tag(type: :submit, class: "ui black button", id: "search-button") do %>
+            <i class="search icon"></i> Look up a friend
+          <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+</div>

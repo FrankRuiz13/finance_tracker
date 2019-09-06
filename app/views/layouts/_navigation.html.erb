@@ -2,11 +2,12 @@
 <%= link_to "Stock Tracker", index_path, class: "item", id: "logo" %>
   <% if current_user %>
     <%= link_to "My Portfolio", root_path, class: "item" %>
-    <li class="item">
+    <%= link_to "My Friends", my_friends_path, class: "item" %>
+    <div class="right menu">
+     <li class="item">
       <i class="user icon"></i>
         <%= current_user.full_name.present? ? current_user.full_name : current_user.email %>
     </li>
-    <div class="right menu">
       <% unless user_signed_in?  %>
       <%= link_to  new_user_registration_path ,class: "item" do%>
         <i class="signup icon"></i> Sign Up
