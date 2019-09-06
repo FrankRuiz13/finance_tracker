@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'index', to: 'welcome#index'
   get 'search_stocks', to: 'stocks#search'
   resources :user_stocks, only: [:create, :destroy]
+  get 'my_friends', to: 'users#my_friends'
 
   
 end
