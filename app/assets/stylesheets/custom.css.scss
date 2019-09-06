@@ -19,6 +19,7 @@
   letter-spacing: -1px;
 }
 
+
 .menu {
   background: rgba( 0, 0, 0, 0.5);
 }
@@ -41,7 +42,7 @@ h3 {
 
 #results-tag {
 
-  background: firebrick;
+  background: olive;
   color: antiquewhite;
   font-size: 1.2em;
 }
@@ -54,4 +55,10 @@ strong {
 .field_with_errors {
   @extend .field;
   @extend .error;
+}
+
+.footer {
+  border-top: 1px solid black;
+  margin-top: 10%;
+  text-align: center;
 }

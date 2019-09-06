@@ -1,26 +1,27 @@
 <div class="ui top inverted menu" id="navbar">
-  <%= link_to "Stox", index_path, class: "item", id: "logo" %>
-  <%= link_to "My Portfolio", root_path, class: "item" %>
-  <a class="item">
-    Contact
-  </a>
-  <div class="right menu">
-    <% unless user_signed_in?  %>
-    <%= link_to  new_user_registration_path ,class: "item" do%>
-      <i class="signup icon"></i> Sign Up
-    <% end %>
-    <%= link_to  new_user_session_path, class: "item" do %>
-      <i class="sign in icon"></i> Login
-    <% end %>
-    <% else %>
-    <%= link_to  edit_user_registration_path , class: "item" do %>
-      <i class="settings icon"></i> Settings
-    <% end %>
-
-    <%= link_to  destroy_user_session_path ,method: :delete, data: {confirm: "Are you sure?"}, class: "item" do %>
-      <i class="sign out icon"></i> Logout
-    <% end %>
-
+<%= link_to "Stock Tracker", index_path, class: "item", id: "logo" %>
+  <% if current_user %>
+    <%= link_to "My Portfolio", root_path, class: "item" %>
+    <li class="item">
+      <i class="user icon"></i>
+        <%= current_user.full_name.present? ? current_user.full_name : current_user.email %>
+    </li>
+    <div class="right menu">
+      <% unless user_signed_in?  %>
+      <%= link_to  new_user_registration_path ,class: "item" do%>
+        <i class="signup icon"></i> Sign Up
+      <% end %>
+      <%= link_to  new_user_session_path, class: "item" do %>
+        <i class="sign in icon"></i> Login
+      <% end %>
+      <% else %>
+      <%= link_to  edit_user_registration_path , class: "item" do %>
+        <i class="settings icon"></i> Settings
+      <% end %>
+      <%= link_to  destroy_user_session_path ,method: :delete, data: {confirm: "Are you sure?"}, class: "item" do %>
+        <i class="sign out icon"></i> Logout
+      <% end %>
     <% end %>
   </div>
+  <% end %>
 </div>

@@ -16,6 +16,16 @@
             <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
           <% end %>
 
+          <div class="field ">
+            <%= f.label :first_name %>
+            <%= f.text_field :first_name %>
+          </div>
+
+          <div class="field ">
+            <%= f.label :last_name %>
+            <%= f.text_field :last_name %>
+          </div>
+
           <div class="field">
             <%= f.label :password %>
             <% if @minimum_password_length %>
