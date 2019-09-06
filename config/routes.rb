@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root 'users#my_portfolio'
   get 'index', to: 'welcome#index'
   get 'search_stocks', to: 'stocks#search'
+  resources :user_stocks, only: [:create]
 
   
 end

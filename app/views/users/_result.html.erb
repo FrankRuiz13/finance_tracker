@@ -1,0 +1,15 @@
+
+<% if @stock %>
+  <div class="ui fluid image">
+  <div class="ui tag label" id="results-tag">
+    <strong>Symbol: </strong> <%= @stock.ticker %> 
+    <strong>Name: </strong> <%= @stock.name %> 
+    <strong>Price: </strong> <%= @stock.last_price %>
+    <div class="top right attached label">
+    <%= link_to "Add to my stocks", user_stocks_path(user: current_user, stock_ticker: @stock.ticker), class: "ui black right ribbon label", method: :post %>
+    </div>
+  </div>
+  </div>
+
+
+  <% end %>
