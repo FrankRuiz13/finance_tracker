@@ -1,24 +1,28 @@
-<% if params[:action] == 'search' %>
-<% flash.each do |message_type, message_content| %>
-  <div class="ui <%= message_type %> message transition">
-    <i class="close icon"></i>
-    <div class="header">
-      <%= message_content %>
-    </div>
-  </div>
-<% end %>
+
+
 
 <% if @stock %>
   <div class="ui fluid image">
-  <div class="ui tag label" id="results-tag">
-    <strong>Symbol: </strong> <%= @stock.ticker %> 
-    <strong>Name: </strong> <%= @stock.name %> 
-    <strong>Price: </strong> <%= @stock.last_price %>
-    <div class="top right attached label">
-    <%= link_to "Add to my stocks", user_stocks_path(user: current_user, stock_ticker: @stock.ticker), class: "ui black right ribbon label", method: :post %>
+    <div class="ui tag label" id="results-tag">
+      <strong>Symbol: </strong> <%= @stock.ticker %> 
+      <strong>Name: </strong> <%= @stock.name %> 
+      <strong>Price: </strong> <%= @stock.last_price %>
+        <div class="top right attached label">
+          <% if current_user.can_add_stock?(@stock.ticker) %>
+            <%= link_to "Add to my stocks", user_stocks_path(user: current_user, stock_ticker: @stock.ticker), class: "ui black right ribbon label", method: :post %>  
+          <% else %>
+            Stock cannot be added because you have already added
+          <% if !current_user.under_stock_limit? %>
+            10 stocks
+          <% end %>
+          <% if current_user.stock_already_added?(@stock.ticker) %>
+            this stock
+          <% end %>
     </div>
   </div>
-  </div>
+<% end %>
+<% end %>
 
+  
+ 
 
-  <% end %>
