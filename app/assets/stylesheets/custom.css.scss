@@ -41,7 +41,6 @@ h3 {
 }
 
 #results-tag {
-
   background: olive;
   color: antiquewhite;
   font-size: 1.2em;
@@ -54,9 +53,10 @@ strong {
 
 #hero {
   background: asset-url("logo.jpg");
-  background-position: center;
+  background-size: cover;
   align-content: center;
   box-shadow: 2px 2px 7px black;
+  height: 60vh;
 }
 
 .field_with_errors {
