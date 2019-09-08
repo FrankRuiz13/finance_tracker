@@ -52,6 +52,13 @@ strong {
   color: rgba( 0, 0, 0, 0.6);
 }
 
+#hero {
+  background: asset-url("logo.jpg");
+  background-position: center;
+  align-content: center;
+  box-shadow: 2px 2px 7px black;
+}
+
 .field_with_errors {
   @extend .field;
   @extend .error;
