@@ -1,7 +1,7 @@
 <div class="ui top inverted menu" id="navbar">
-<%= link_to "Stock Tracker", index_path, class: "item", id: "logo" %>
+<%= link_to "Stock Tracker", root_path, class: "item", id: "logo" %>
   <% if current_user %>
-    <%= link_to "My Portfolio", root_path, class: "item" %>
+    <%= link_to "My Portfolio", my_portfolio_path, class: "item" %>
     <%= link_to "My Friends", my_friends_path, class: "item" %>
     <div class="right menu">
      <li class="item">
