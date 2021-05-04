@@ -13,7 +13,7 @@ gem 'devise-semantified'
 gem "stock_quote", '~> 3.0.0'
 gem 'iex-ruby-client'
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 3.12'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
